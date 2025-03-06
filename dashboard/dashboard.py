@@ -44,7 +44,7 @@ def create_byweather_df(df):
     byweather_df.rename(columns={"cnt": "total_customer"}, inplace=True)
     return byweather_df
 
-all_df = pd.read_csv("main_data.csv")
+all_df = pd.read_csv("https://raw.githubusercontent.com/raflyherdianto/belajar-analisis-data-python/refs/heads/master/dashboard/main_data.csv")
 
 datetime_columns = ["dteday"]
 all_df.sort_values(by="dteday", inplace=True)
@@ -59,7 +59,7 @@ min_date = all_df["dteday"].min()
 max_date = all_df["dteday"].max()
 
 with st.sidebar:
-    st.image("logo.png")
+    st.image("https://raw.githubusercontent.com/raflyherdianto/belajar-analisis-data-python/refs/heads/master/dashboard/logo.png")
     
     start_date, end_date = st.date_input(
         label='Rentang Waktu',min_value=min_date,
